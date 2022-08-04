@@ -4,6 +4,11 @@ import HeaderComponent from './atoms/header';
 import TextContent from './atoms/text-content';
 import FullLengthHeader from './rows';
 import Select from 'react-select'
+import { GitlabIcon } from './icons/gitlab';
+import { NotionIcon } from './icons/notion';
+import { SlackIcon } from './icons/slack';
+import { JiraIcon } from './icons/jira';
+import { GithubIcon } from './icons/github';
 
 const App = () => {
   const data = [
@@ -11,31 +16,31 @@ const App = () => {
       id: 1,
       logo: '',
       value: 'notion',
-      label: 'Notion'
+      label: <div class="icon-content"><span><NotionIcon /></span><span>Notion</span></div>
     },
     {
       id: 2,
       logo: '',
       value: 'slack',
-      label: 'Slack'
+      label: <div class="icon-content"><span><SlackIcon /></span><span>Slack</span></div>
     },
     {
       id: 3,
       logo: '',
       value: 'jira',
-      label: 'Jira'
+      label: <div class="icon-content"><span><JiraIcon /></span><span>Jira</span></div>
     },
     {
       id: 4,
       logo: '',
       value: 'github',
-      label: 'Github'
+      label: <div class="icon-content"><span><GithubIcon /></span><span>Github</span></div>
     },
     {
       id: 5,
       logo: '',
       value: 'gitLab',
-      label: 'Gitlab'
+      label: <div class="icon-content"><span><GitlabIcon /></span><span>Gitlab</span></div>
     },
   ];
 
