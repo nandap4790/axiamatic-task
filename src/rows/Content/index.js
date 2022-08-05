@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { connect } from 'react-redux';
 
 import { GithubIcon } from '../../icons/github';
 import { GitlabIcon } from '../../icons/gitlab';
@@ -8,7 +9,7 @@ import { NotionIcon } from '../../icons/notion';
 import { SlackIcon } from '../../icons/slack';
 import { ToolUploadStaticContent } from '../../molecules/ToolUploadStaticContent';
 
-export const Content = () => {
+const Content = () => {
     const data = [
         {
           id: 1,
@@ -70,15 +71,15 @@ export const Content = () => {
       }
     
       const renderStuff = () => {
-        // return selectedVal.map((item) => {
-        //   return <div class="icon-container">
-        //     {item.label}
-        //     <span className="remove-item" onClick={(e) => removeItemFromSelected(e, item)}>
-        //       <span class="material-icons">close</span>
-        //       <span>Remove</span>
-        //     </span>
-        //   </div>
-        // })
+        return selectedVal.map((item) => {
+          return <div class="icon-container">
+            {item.label}
+            <span className="remove-item" onClick={(e) => removeItemFromSelected(e, item)}>
+              <span class="material-icons">close</span>
+              <span>Remove</span>
+            </span>
+          </div>
+        })
         // for(let i=1;i<=4;i++) {
         //   console.log('inside', 1)
         //   return <div class="icon-container">
@@ -87,13 +88,13 @@ export const Content = () => {
         //       </div>
         //     </div>
         // }
-        return [...Array(4)].map((e, i) => 
-          <div class="icon-container">
-            <div className="add-icon">
-              <span class="material-icons">add</span>
-            </div>
-          </div>
-        );
+        // return [...Array(4)].map((e, i) => 
+        //   <div class="icon-container">
+        //     <div className="add-icon">
+        //       <span class="material-icons">add</span>
+        //     </div>
+        //   </div>
+        // );
       }
     return <div className="axiamatic-tools-container">
         <div className="description-container">
@@ -106,3 +107,15 @@ export const Content = () => {
         </div>
     </div>
 }
+
+const mapStateToProps = (state) => {
+  console.log(state)
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToList: () => dispatch({type: 'ADD_TO_LIST'})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FullLengthHeader from './rows/FullLengthHeader';
-import { Content } from './rows/Content';
+import Content from './rows/Content';
 
 import './App.css';
 
