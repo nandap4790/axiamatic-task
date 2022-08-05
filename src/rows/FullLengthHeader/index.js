@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HeaderComponent from '../atoms/header';
-import TextContent from '../atoms/text-content';
+import HeaderComponent from '../../atoms/header';
+import TextContent from '../../atoms/text-content';
 
 const FullLengthHeader = () => {
     return <header class="full-length-header">

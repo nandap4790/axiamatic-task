@@ -1,0 +1,2 @@
+export const addToolHeader = "Let's add your internal tools";
+export const addToolDescription = "Search to quickly add products your team uses today. You'll be able to add as many as you need later but for now let's add four.";
