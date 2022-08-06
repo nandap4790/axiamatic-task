@@ -8,8 +8,9 @@ import { JiraIcon } from '../../icons/jira';
 import { NotionIcon } from '../../icons/notion';
 import { SlackIcon } from '../../icons/slack';
 import { ToolUploadStaticContent } from '../../molecules/ToolUploadStaticContent';
+import ItemsContainer from '../ItemsContainer';
 
-const Content = () => {
+const Content = ({addToList, itemList}) => {
     const data = [
         {
           id: 1,
@@ -42,80 +43,46 @@ const Content = () => {
           label: <div class="icon-content"><span><GitlabIcon /></span><span className="software-option">Gitlab</span></div>
         },
       ];
-      const [selectedVal, setSelectedVal] = useState([]);
-      const [numberOfItems, setNumberOfItems] = useState();
-      const [productString, setProductString] = useState();
     
       const handleChange = (selectedOptions) => {
-        const copyArr = [...selectedVal];
+        const copyArr = [...itemList];
         const findItem = copyArr.find(item => item.id === selectedOptions.id);
       
         if(!findItem) {
-          copyArr.push(selectedOptions);
-          setSelectedVal(copyArr);
+          addToList(selectedOptions)
         }
       }
-    
+
+      const [buttonDisabled, setButtonDisabled] = useState(true);
+      const [buttonClass, setButtonClass] = useState("next-button disabled");
+
       useEffect(() => {
-        if(selectedVal.length === 1) {
-          setProductString("product")
-        } else if(selectedVal.length > 1) {
-          setProductString("products")
+        if(itemList.length > 0) {
+          setButtonDisabled(false);
+          setButtonClass("next-button");
         }
-        setNumberOfItems(selectedVal.length)
-      }, [selectedVal])
-    
-      const removeItemFromSelected = (e, item) => {
-        const copyArr = [...selectedVal];
-        setSelectedVal(copyArr.filter(ele =>  ele.id !== item.id ))
-      }
-    
-      const renderStuff = () => {
-        return selectedVal.map((item) => {
-          return <div class="icon-container">
-            {item.label}
-            <span className="remove-item" onClick={(e) => removeItemFromSelected(e, item)}>
-              <span class="material-icons">close</span>
-              <span>Remove</span>
-            </span>
-          </div>
-        })
-        // for(let i=1;i<=4;i++) {
-        //   console.log('inside', 1)
-        //   return <div class="icon-container">
-        //     <div className="add-icon">
-        //         <span class="material-icons">add</span>
-        //       </div>
-        //     </div>
-        // }
-        // return [...Array(4)].map((e, i) => 
-        //   <div class="icon-container">
-        //     <div className="add-icon">
-        //       <span class="material-icons">add</span>
-        //     </div>
-        //   </div>
-        // );
-      }
+      }, [itemList]);
+
     return <div className="axiamatic-tools-container">
         <div className="description-container">
             <ToolUploadStaticContent />
             <Select options={data} onChange={handleChange} placeholder={'Search for any software...'} />
+            <button className={buttonClass} disabled={buttonDisabled}>Next</button>
         </div>
-        <div className="items-container">
-            <div className="wrapper-icons">{renderStuff()}</div>
-            {numberOfItems > 0 && <div className="added-products-count">{numberOfItems} {productString} added</div>}
-        </div>
+        <ItemsContainer />
     </div>
 }
 
-const mapStateToProps = (state) => {
-  console.log(state)
+const mapStateToprops = (state) => {
+  return {
+      itemList: state
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToList: () => dispatch({type: 'ADD_TO_LIST'})
+    addToList: (data) => dispatch({payload: data, type: 'ADD_ITEM'})
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Content);
+export default connect(mapStateToprops, mapDispatchToProps)(Content);
