@@ -3,6 +3,8 @@ import React from 'react';
 import HeaderComponent from '../../atoms/header';
 import TextContent from '../../atoms/text-content';
 
+import "./index.scss";
+
 const FullLengthHeader = () => {
     return <header class="full-length-header">
         <HeaderComponent level={1} content="axiamatic" />

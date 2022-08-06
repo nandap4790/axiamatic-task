@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
+import "./index.scss";
+
 const ItemsContainer = ({itemList, removeFromList}) => {
     const [numberOfItems, setNumberOfItems] = useState();
     const [productString, setProductString] = useState();
@@ -20,30 +22,23 @@ const ItemsContainer = ({itemList, removeFromList}) => {
     }
         
     const renderStuff = () => {
-        return itemList.map((item) => {
-          return <div class="icon-container">
-            {item.label}
-            <span className="remove-item" onClick={(e) => removeItemFromSelected(e, item)}>
-              <span class="material-icons">close</span>
-              <span>Remove</span>
-            </span>
-          </div>
+        return itemList.map((item, index) => {
+            if(item === undefined) {
+                return <div className="icon-container" key={index}>
+                    <div className="add-icon">
+                        <span class="material-icons">add</span>
+                    </div>
+                </div>
+            } else {
+                return <div class="icon-container" key={item.id}>
+                    {item.label}
+                    <span className="remove-item" onClick={(e) => removeItemFromSelected(e, item)}>
+                    <span class="material-icons">close</span>
+                    <span>Remove</span>
+                    </span>
+                </div>
+            }
         })
-    //     // for(let i=1;i<=4;i++) {
-    //     //   console.log('inside', 1)
-    //     //   return <div class="icon-container">
-    //     //     <div className="add-icon">
-    //     //         <span class="material-icons">add</span>
-    //     //       </div>
-    //     //     </div>
-    //     // }
-    //     // return [...Array(4)].map((e, i) => 
-    //     //   <div class="icon-container">
-    //     //     <div className="add-icon">
-    //     //       <span class="material-icons">add</span>
-    //     //     </div>
-    //     //   </div>
-    //     // );
     }
 
     return <div className="items-container">

@@ -1,0 +1,28 @@
+.next-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 8px 0;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+
+    &.disabled {
+        background-color: #ddd;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .axiamatic-tools-container {
+      display: flex;
+      max-width: 1024px;
+      margin: 0 auto;
+      column-gap: 48px;
+
+      .description-container {
+        order: 1;
+        width: 30%;
+      }
+    }
+}

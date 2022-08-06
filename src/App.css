@@ -1,34 +1,10 @@
-.full-length-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.link-text {
-  position: relative;
-  top: 4px;
-  color: #aaa;
-}
-
 .axiamatic-tools {
   padding: 16px;
-}
-
-.full-length-header {
-  margin-bottom: 40px;
 }
 
 h3 {
   font-size: 1.5rem;
   margin-bottom: 16px;
-}
-
-.static-description {
-  margin: 32px 0;
-}
-
-.static-description div {
-  line-height: 24px;
 }
 
 .icon-content {
@@ -41,100 +17,4 @@ h3 {
 .software-option {
   position: relative;
   top: -2px;
-}
-
-.wrapper-icons {
-  display: grid;
-  flex-wrap: wrap;
-  margin: 16px 0;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-}
-
-.icon-container {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px #ddd;
-}
-
-.icon-container .icon-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.icon-container .icon-content span {
-  margin-bottom: 8px;
-}
-
-.icon-container .icon-content .software-option {
-  margin-bottom: 32px;
-}
-
-.icon-container .icon-content svg {
-  width: 75px;
-  height: 75px;
-}
-
-.added-products-count {
-  text-align: center;
-}
-
-.add-icon .material-icons {
-  padding: 24px;
-  background-color: #eee;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.remove-item {
-  display: flex;
-  align-items: center;
-}
-
-.remove-item .material-icons {
-  font-size: 20px;
-  padding-right: 8px;
-}
-
-.icon-container .software-option {
-  font-weight: bold;
-}
-
-@media screen and (min-width: 1024px) {
-  .axiamatic-tools-container {
-    display: flex;
-    max-width: 1024px;
-    margin: 0 auto;
-    column-gap: 48px;
-  }
-  
-  .description-container {
-    order: 1;
-    width: 30%;
-  }
-  
-  .items-container {
-    width: 70%;
-  }
-}
-
-
-.next-button {
-  width: 100%;
-  margin-top: 16px;
-  padding: 8px 0;
-  font-weight: bold;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-}
-
-.next-button.disabled {
-  background-color: #ddd;
 }

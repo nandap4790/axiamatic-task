@@ -1,0 +1,66 @@
+@media screen and (min-width: 1024px) {  
+    .items-container {
+      width: 70%;
+    }
+}
+
+.wrapper-icons {
+    display: grid;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.added-products-count {
+    text-align: center;
+}
+
+.icon-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ddd;
+
+    .icon-content {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            margin-bottom: 8px;
+        }
+
+        .software-option {
+            margin-bottom: 32px;
+            font-weight: bold;
+        }
+
+        svg {
+            width: 75px;
+            height: 75px;
+        }
+    }
+}
+
+.add-icon {
+    .material-icons {
+        padding: 24px;
+        background-color: #eee;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+}
+
+.remove-item {
+    display: flex;
+    align-items: center;
+
+    .material-icons {
+        font-size: 20px;
+        padding-right: 8px;
+    }
+}

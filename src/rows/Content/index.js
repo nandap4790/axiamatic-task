@@ -10,6 +10,8 @@ import { SlackIcon } from '../../icons/slack';
 import { ToolUploadStaticContent } from '../../molecules/ToolUploadStaticContent';
 import ItemsContainer from '../ItemsContainer';
 
+import "./index.scss";
+
 const Content = ({addToList, itemList}) => {
     const data = [
         {
@@ -46,7 +48,7 @@ const Content = ({addToList, itemList}) => {
     
       const handleChange = (selectedOptions) => {
         const copyArr = [...itemList];
-        const findItem = copyArr.find(item => item.id === selectedOptions.id);
+        const findItem = copyArr.find(item => item && item.id === selectedOptions.id);
       
         if(!findItem) {
           addToList(selectedOptions)
