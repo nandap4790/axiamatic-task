@@ -6,10 +6,10 @@ import TextContent from '../../atoms/text-content';
 import "./index.scss";
 
 const FullLengthHeader = () => {
-    return <header class="full-length-header">
-        <HeaderComponent level={1} content="axiamatic" />
-        <TextContent type="link" content="Exit Setup" />
-    </header>
+	return <header className="full-length-header">
+		<HeaderComponent level={1} content="axiamatic" />
+		<TextContent type="link" content="Exit Setup" />
+	</header>
 }
 
 export default FullLengthHeader;
