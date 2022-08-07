@@ -2,8 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
 ## App Description:
 This app allows the user to select upto 4 tools as per the business requirements.
 
