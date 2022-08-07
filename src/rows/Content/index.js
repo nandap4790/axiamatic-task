@@ -57,18 +57,21 @@ const Content = ({addToList, itemList}) => {
 
       const [buttonDisabled, setButtonDisabled] = useState(true);
       const [buttonClass, setButtonClass] = useState("next-button disabled");
+      const [dropdownDisabled, setDropdownDisabled] = useState(false);
 
       useEffect(() => {
         if(itemList.length > 0) {
           setButtonDisabled(false);
           setButtonClass("next-button");
+
+          itemList.length === 4 ? setDropdownDisabled(true) : setDropdownDisabled(false);
         }
       }, [itemList]);
 
     return <div className="axiamatic-tools-container">
         <div className="description-container">
             <ToolUploadStaticContent />
-            <Select options={data} onChange={handleChange} placeholder={'Search for any software...'} />
+            <Select options={data} onChange={handleChange} placeholder={'Search for any software...'} isDisabled={dropdownDisabled} />
             <button className={buttonClass} disabled={buttonDisabled}>Next</button>
         </div>
         <ItemsContainer />

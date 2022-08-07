@@ -1,4 +1,4 @@
-function listReducer(state = [...Array(4)], action){
+function listReducer(state = [], action){
     switch (action.type){
       case "ADD_ITEM":
         return [...state, action.payload]

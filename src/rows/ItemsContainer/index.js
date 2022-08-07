@@ -22,7 +22,12 @@ const ItemsContainer = ({itemList, removeFromList}) => {
     }
         
     const renderStuff = () => {
-        return itemList.map((item, index) => {
+        const target = 4;
+        const itemsLength = itemList.length;
+        const placeholderItems = [...Array(target - itemsLength)];
+        const newArr = [...itemList, ...placeholderItems];
+
+        return newArr.map((item, index) => {
             if(item === undefined) {
                 return <div className="icon-container" key={index}>
                     <div className="add-icon">
