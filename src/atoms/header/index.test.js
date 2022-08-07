@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import HeaderComponent from './index';
+import HeaderComponent from '.';
+
 
 describe('Header Component', () => {
   it('should render level 1 header with no content when no props are passed', () => {

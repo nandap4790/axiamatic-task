@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import TextContent from './index';
+import TextContent from '.';
+
 
 describe('TextContent Component', () => {
   it('should render null when no props are passed', () => {

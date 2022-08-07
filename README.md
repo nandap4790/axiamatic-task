@@ -4,67 +4,40 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+## App Description:
+This app allows the user to select upto 4 tools as per the business requirements.
 
-### `npm start`
+React Version:
+18.2.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Steps to run the app locally:
+Clone the repository: https://github.com/nandap4790/axiamatic-task.git
+npm install
+npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Libraries used:
+React select v5.4.0, this handles the custom dropdown
+sass v1.54.3
 
-### `npm test`
+## Folder Structure:
+src/index.js: This is the starter file which calls the App component which is wrapped by the Redux Provider.
+src/App.js: This is the parent component and acts as a wrapper to the child components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The folder structure is based on atomic model:
+# Atoms:
+Header: which consists of components which accept the level and renders any header from h1-h6
+TextContent: which is responsible to render any other text which can be customized to a link/action item/span/div
 
-### `npm run build`
+# Icons:
+All the tools' icons are in the form of react components and all of them are of svg format.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Molecules:
+ToolUploadStaticContent: Which consists of the static verbiage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Rows:
+Content: Contains static content and the select dropdown
+FullLengthHeader: Has the header with logo and exit setup
+ItemsContainer: renders the individual items/placeholders, when no items are present
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
