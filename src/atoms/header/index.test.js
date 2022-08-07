@@ -1,21 +1,26 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import HeaderComponent from '.';
-
+import { render, screen } from '@testing-library/react';
 
 describe('Header Component', () => {
-  it('should render level 1 header with no content when no props are passed', () => {
-    const wrapper = mount(<HeaderComponent />);
-    expect(wrapper.html()).toEqual('<h1></h1>');
+  it("should render h1 with empty element when no props are passed", () => {
+    render(<HeaderComponent />);
+    const emptyHeaderElement = screen.getByTestId('header');
+    expect(emptyHeaderElement).toBeEmptyDOMElement();
+  });
+
+  it("should render h1 with only content passed", () => {
+    render(<HeaderComponent content="Just the content passed"/>);
+    const contentElement = screen.getByText(/just the content passed/i);
+    expect(contentElement).toBeInTheDocument();
   })
 
-  it('should render the content passed as a prop', () => {
-    const wrapper = mount(<HeaderComponent content="Test Header"/>);
-    expect(wrapper.html()).toEqual('<h1>Test Header</h1>');
-  })
+  it("should render the right tag based on the level passed with content", () => {
+    render(<HeaderComponent content="Just the content passed" level={2} />);
+    const contentElement = screen.getByText(/just the content passed/i);
+    const headerElement = screen.getByTestId('header');
 
-  it('should render the tag passed as level', () => {
-    const wrapper = mount(<HeaderComponent content="Test Header" level={2} />);
-    expect(wrapper.html()).toEqual('<h2>Test Header</h2>');
+    expect(headerElement).toContainHTML('<h2 data-testid="header">Just the content passed</h2>');
+    expect(contentElement).toBeInTheDocument();
   })
 })

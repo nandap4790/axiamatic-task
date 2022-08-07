@@ -14,6 +14,6 @@ export const ToolUploadStaticContent = () => {
 				<HeaderComponent level={3} content={addToolHeader} />
 				<TextContent type="div" content={addToolDescription} />
 			</div>
-	</div>
+		</div>
 	)
 }
