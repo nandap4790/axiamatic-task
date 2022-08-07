@@ -1,15 +1,15 @@
 .next-button {
   width: 100%;
-  margin-top: 16px;
-  padding: 8px 0;
+  margin-top: var(--spacing1);
+  padding: calc(0.5 * var(--spacing1)) 0;
   font-weight: bold;
-  color: white;
-  background-color: #007bff;
+  color: var(--white-color);
+  background-color: var(--button-blue);
   border: none;
   border-radius: 5px;
 
   &.disabled {
-    background-color: #ddd;
+    background-color: var(--light-gray);
   }
 }
 
@@ -18,7 +18,7 @@
     display: flex;
     max-width: 1024px;
     margin: 0 auto;
-    column-gap: 48px;
+    column-gap: calc(3 * var(--spacing1));
     justify-content: center;
 
     .description-container {

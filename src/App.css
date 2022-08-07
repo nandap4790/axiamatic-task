@@ -1,17 +1,27 @@
+:root {
+  --white-color: #fff;
+  --button-blue: #007bff;
+  --medium-light-gray: #aaa;
+  --light-gray: #ddd;
+  --very-light-gray: #eee;
+
+  --spacing1: 1rem; 
+}
+
 .axiamatic-tools {
-  padding: 16px;
+  padding: var(--spacing1);
 }
 
 h3 {
   font-size: 1.5rem;
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing1);
 }
 
 .icon-content {
   display: flex;
   align-items: center;
   column-gap: 12px;
-  margin: 0 8px;
+  margin: 0 calc(0.5 * var(--spacing1));
 }
 
 .software-option {

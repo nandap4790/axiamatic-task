@@ -1,16 +1,16 @@
 .with-background {
-	color: white;
-	padding: 8px;
+	color: var(--white-color);
+	padding: calc(0.5 * var(--spacing1));
 	border-radius: 5px;
 	font-weight: 800;
 }
 
 .blue-background {
-  background-color: #007bff;
+  background-color: var(--button-blue);
 }
 
 .link-text {
 	position: relative;
-	top: 4px;
-	color: #aaa;
+	top: calc(0.25 * var(--spacing1));
+	color: var(--medium-light-gray);
 }
