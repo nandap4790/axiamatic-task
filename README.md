@@ -9,8 +9,8 @@ React Version:
 18.2.0
 
 ## Steps to run the app locally:
-Clone the repository: https://github.com/nandap4790/axiamatic-task.git
-npm install
+Clone the repository: https://github.com/nandap4790/axiamatic-task.git<br>
+npm install<br>
 npm start
 
 ## Libraries used:
